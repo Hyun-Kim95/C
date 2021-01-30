@@ -1,0 +1,27 @@
+# 환경설정
+  visual studio 2019 검색 -> Community 2019 다운로드 -> C++를 사용한 데스크톱 개발 선택 후 설치
+  -> 컴퓨터 재부팅 -> 실행(나중에 로그인) -> 개발설정: Visual C++ 테마: 어둡게 시작 -> 새 프로젝트 만들기 클릭
+  -> 모든언어: C++ 빈프로젝트 선택 후 다음 -> 프로젝트 이름: MyProject 만들기 -> 왼쪽의 소스파일 우클릭
+  -> 추가 -> 새 항목 -> C++파일(cpp) 클릭 후 밑에 이름: helloworld.c 추가
+  -> #include <stdio.h>
+     int main() {
+         printf("Hello World \n");    # 문장 마지막엔 항상 세미콜론을 넣어야 함
+     }
+  -> Ctrl + F5(디버그 없이 실행) -> 프로그램 실행성공
+
+# 경찰서 조서 쓰기
+  # 정수형 변수
+    소스파일에 printfscanf.c 생성 -> helloworld.c 삭제(오류때문)
+    
+    #include <stdio.h>
+    int main(void)
+    {
+      int age = 12;           # 자료형, 변수
+      printf("%d\n", age);    # %d : 정수형 값(콤마(,) 뒤에 나오는 값을 순서대로)을 출력
+      age = 13;               # 처음에 int를 선언했기 때문에 이후로는 int를 안붙힘
+      printf("%d\n", age);
+      return 0;
+    }
+  
+  # 주석
+  
