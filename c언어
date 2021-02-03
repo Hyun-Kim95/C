@@ -101,4 +101,13 @@
       printf("범죄	: %s\n", what);
   
   # 피라미드를 쌓아라
-    
+    # 뿔뿔
+      소스파일에 loop.c 생성
+      
+      #include <stdio.h>
+
+      int main(void)            # 오류발생: 경찰서 조서때에 main이 이미 쓰였기 때문 -> 이전 파일의 main을 main_printfscanf 로 변경
+      {
+        printf("Hello World\n");
+        return 0;
+      }
