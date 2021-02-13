@@ -1,0 +1,101 @@
+# 환경설정
+  visual studio 2019 검색 -> Community 2019 다운로드 -> C++를 사용한 데스크톱 개발 선택 후 설치
+  -> 컴퓨터 재부팅 -> 실행(나중에 로그인) -> 개발설정: Visual C++ 테마: 어둡게 시작 -> 새 프로젝트 만들기 클릭
+  -> 모든언어: C++ 빈프로젝트 선택 후 다음 -> 프로젝트 이름: MyProject 만들기 -> 왼쪽의 소스파일 우클릭
+  -> 추가 -> 새 항목 -> C++파일(cpp) 클릭 후 밑에 이름: helloworld.c 추가
+  -> #include <stdio.h>
+     int main() {
+         printf("Hello World \n");    # 문장 마지막엔 항상 세미콜론을 넣어야 함
+     }
+  -> Ctrl + F5(디버그 없이 실행) -> 프로그램 실행성공
+
+# 경찰서 조서 쓰기
+  # 정수형 변수
+    소스파일에 printfscanf.c 생성 -> helloworld.c 삭제(오류때문)
+    
+    #include <stdio.h>
+    int main(void)
+    {
+      int age = 12;           # 자료형, 변수
+      printf("%d\n", age);    # %d : 정수형 값(콤마(,) 뒤에 나오는 값을 순서대로)을 출력
+      age = 13;               # 처음에 int를 선언했기 때문에 이후로는 int를 안붙힘
+      printf("%d\n", age);
+      return 0;
+    }
+  
+  # 주석(Ctrl + k + c, 해제Ctrl + k + u)
+    /*(내용
+      내용들)*/    # 들여쓰기를 제외한 선택영역을 잡고 단축키
+      
+    //(내용)    # 한줄 주석처리 # 들여쓰기 포함한 단축키
+  
+  # 실수형 변수
+    	float f = 46.5;
+      printf("%.2f\n", f);    # f 앞에 .2 : 소수점 둘째자리까지 표시(46.50)
+      double d = 4.428;       # double : float처럼 실수를 표현
+      printf("%.2lf\n", d);   # %lf로 표현, .2를 썼는데 소수점 셋째자리까지 있으므로 반올림됨(4.43)
+      return 0;
+
+  # 상수
+  	const int YEAR = 2000; //상수
+    printf("태어난 년도 : %d\n", YEAR);
+    //YEAR = 2001;  //불가
+
+  # printf
+    //연산
+    int add = 3 + 7;
+    //printf("3 + 7 = %d\n", add);
+    printf("%d X %d = %d\n", 39, 79, 39 * 79);
+
+  # scanf (키보드 입력을 받아서 저장)
+      //int input;
+      //printf("정수를 입력하세요 : ");
+      //scanf_s("%d", &input);
+      //printf("입력값 : %d\n", input);
+
+      /*int one, two, three;
+      printf("3개의 정수를 입력하세요 : ");
+      scanf_s("%d %d %d", &one, &two, &three);
+      printf("첫번째 값 : %d\n", one);
+      printf("두번째 값 : %d\n", two);
+      printf("세번째 값 : %d\n", three);*/
+
+      //문자(한글자), 문자열(여러글자)
+      //char c = 'A';
+      //printf("%c\n", c);
+
+      char str[256];    # 256개 까지 문자를 받을 수 있음
+      scanf_s("%s", str, sizeof(str));  # 문자열을 받을 때는 &표시 안씀   # sizeof: 문자열을 쓸 수 있는 공간의 크기를 알려줌
+      printf("%s\n", str);
+
+  # 프로젝트
+    	// 프로젝트
+      // 경찰관이 범죄자의 정보를 입수 (조서 작성)
+      // 이름? 나이? 몸무게? 키? 범죄명?
+      char name[256];
+      printf("이름이 뭐에요?");
+      scanf_s("%s", name, sizeof(name));
+
+      int age;
+      printf("몇살이에요?");
+      scanf_s("%d", &age);
+
+      float weight;
+      printf("몸무게는 몇 kg 이예요?");
+      scanf_s("%f", &weight);
+
+      double height;
+      printf("키는 몇 cm 에요?");
+      scanf_s("%lf", &height);
+
+      char what[256];
+      printf("무슨 범죄를 저질렀어요?");
+      scanf_s("%s", what, sizeof(what));
+
+      // 조서 내용 출력
+      printf("\n\n--- 범죄자 정보 ---\n\n");
+      printf("이름	: %s\n", name);
+      printf("나이	: %d\n", age);
+      printf("몸무게	: %.2f\n", weight);
+      printf("키	: %.2lf\n", height);
+      printf("범죄	: %s\n", what);
