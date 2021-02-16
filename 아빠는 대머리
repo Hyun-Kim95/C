@@ -78,4 +78,26 @@
 	// char 크기: 1 byte
 
 # 문자열 심화
+  char c_array[7] = { 'c','o','d','i','n','g','\0' };	// \0(null문자) 가 들어갈 자리를 필수로 남겨둠
+  //char c_array[6] = { 'c','o','d','i','n','g'};	// 오류 발생
+  printf("%s\n", c_array);
+
+  char c_array[10] = { 'c','o','d','i','n','g','\0' };
+  printf("%s\n", c_array);			// 잘나옴
+  for (int i = 0; i < sizeof(c_array); i++)	// 잘 나오고 나머지는 빈줄로 나옴
+  {
+      printf("%c\n", c_array[i]);
+  }
+  for (int i = 0; i < sizeof(c_array); i++)	// 잘 나오고 나머지는 빈줄로 나옴
+  {
+      printf("%d\n", c_array[i]); 		// ASCII 코드 값 출력 (null 문자는 0 으로 입력됨)
+  }
+	
+  // 문자열 입력받기 : 경찰서 조서 쓰기 예제		// 배열 예제(printf_scanf)
+  char name[256];				// 256 칸으로 넉넉함
+  printf("이름이 뭐에요?");
+  scanf_s("%s", name, sizeof(name));
+  printf("%s\n", name);
+
+# 아스키 코드
   
