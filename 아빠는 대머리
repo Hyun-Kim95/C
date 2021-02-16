@@ -1,2 +1,81 @@
 # 배열 기초
+  	// 배열
+    //int subway_1 = 30; // 지하철 1호차에 30명이 타고 있다
+    //int subway_2 = 40;
+    //int subway_3 = 50;
+
+    //printf("지하철 1호차에 %d 명이 타고 있습니다.\n", subway_1);
+    //printf("지하철 1호차에 %d 명이 타고 있습니다.\n", subway_2);
+    //printf("지하철 1호차에 %d 명이 타고 있습니다.\n", subway_3);
+
+    // 여러 개의 변수를 함께, 동시에 생성
+    int subway_array[3]; // [0][1][2]
+    subway_array[0] = 30;
+    subway_array[1] = 40;
+    subway_array[2] = 50;
+
+    for (int i = 0; i < 3; i++)
+    {
+      printf("지하철 %d호차에 %d 명이 타고 있습니다.\n", i+1, subway_array[i]);
+    }
+
+# 값 설정
+  // 값 설정 방법
+	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+
+	// 값은 초기화를 반드기 해야 함
+	int arr[10];					# 결과가 이상하게 나옴
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+
+	// 배열 크기는 항상 상수로 선언
+	//int size = 10;
+	//int arr[size]; // 이렇게 사용 불가
+	
+	int arr[10] = { 1, 2 };		// 3번째 값부터는 자동으로 '0'으로 초기화 됨
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+
+	int arr[] = { 1, 2 }; // arr[2] 와 동일
+
+	float arr_f[5] = { 1.0f, 2.0f, 3.0f };
+	for (int i = 0; i < 5; i++)
+		{
+			printf("%.2f\n", arr_f[i]);     # 결과: 1.00 2.00 3.00 0.00 0.00
+		}
+
+# 문자 vs 문자열
+  // 문자 vs 문자열
+	char c = 'A';
+	printf("%c\n", c); // 문자
+
+	// 문자열 끝에는 '끝'을 의미하는 NULL 문자 '\0' 가 포함되어야 함
+	char str[7] = "coding";     // [c][o][d][i][n][g][\0] 이래서 총 7칸으로 생성해야 됨
+	printf("%s\n", str);
+
+	char str[] = "coding";
+	printf("%s\n", str);
+	printf("%d\n", sizeof(str));  // 길이는 7로 나옴
+
+	for (int i = 0; i < sizeof(str); i++)   // for 문으로 돌리면 마지막 한줄이 비게 나옴(\0 때문)
+	{
+		printf("%c\n", str[i]);
+	}
+
+	char kor[] = "나도코딩";
+	printf("%s\n", kor);          // 잘 나옴
+	printf("%d\n", sizeof(kor));  // 9
+	// 영어 1글자: 1 byte
+	// 한글 1글자: 2 byte
+	// char 크기: 1 byte
+
+# 문자열 심화
   
